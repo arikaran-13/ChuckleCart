@@ -1,0 +1,26 @@
+<div>
+<mat-card class="card">
+    <h2 class="card-header">Category</h2>
+    <form [formGroup]="postCategoryFormGroup" (ngSubmit)="onCategorySubmit()" class="form">
+        <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput type="text" placeholder="Name" formControlName="name">
+            <mat-error *ngIf="postCategoryFormGroup.get('name').hasError('required')">
+                Name is required
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Description</mat-label>
+            <textarea matInput type="textarea" placeholder="Write something about the category" formControlName="description"></textarea>
+            <mat-error *ngIf="postCategoryFormGroup.get('description').hasError('required')">
+                Discription is required
+            </mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="postCategoryFormGroup.invalid">
+            Submit
+        </button>
+    </form>
+</mat-card>
+</div>

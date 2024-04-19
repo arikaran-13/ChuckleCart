@@ -1,0 +1,15 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.dialog-container{
+    width: 500px;
+    height: 300px;
+}
+
+.close{
+    color: rgb(231, 36, 69);
+}
+

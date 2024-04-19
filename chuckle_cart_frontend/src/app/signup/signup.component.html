@@ -1,0 +1,50 @@
+<mat-card class="card">
+ <mat-card-content class="card-content">
+    <form class="formSignUp" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+        <h2 class="card-header">Sign Up</h2>
+        <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="username">
+            <mat-error *ngIf="signUpForm.get('username').hasError('required')">
+              Username is required
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email">
+            <mat-error *ngIf="signUpForm.get('email').hasError('required')">
+                Email is required
+            </mat-error>
+            <mat-error *ngIf="signUpForm.get('email').hasError('email')">
+                Please enter a valid email
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput  [type]="hidePassword ? 'password': 'text'" formControlName="password">
+            <button mat-icon-button matSuffix (click)="togglePasswordVisibility()" type="button">
+                <mat-icon>{{hidePassword? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="signUpForm.get('password').hasError('required')">
+                Password is required
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Confirm Password</mat-label>
+            <input matInput formControlName="confirmPassword" [type]="hideConfirmPassword? 'password': 'text' ">
+            <button type="button" matSuffix mat-icon-button (click)="toggleConfirmPasswordVisibility()">
+                <mat-icon>{{hideConfirmPassword? 'visibility_off':'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="signUpForm.get('confirmPassword').hasError('required') && signUpForm.get('confirmPassword').touched">
+                Password confirmation is required
+            </mat-error>
+        </mat-form-field>
+            <button  mat-raised-button color="primary" [disabled]="isFormValid()" type="submit">Sign Up</button>
+            <button  mat-button color="primary" type="button" (click)="onClickRedirectToLogin()">
+                Already have an account? Log In
+            </button>
+    </form>
+    </mat-card-content>
+</mat-card>
+
+

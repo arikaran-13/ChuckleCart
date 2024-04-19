@@ -1,0 +1,37 @@
+<div class="search_bar">
+
+<input type="search" class="search" #seachBar (input)="displaySearchedProducts(seachBar)">
+<button 
+class="search-btn" 
+>
+Search
+</button>
+
+</div>
+
+<div class="container">
+
+<mat-card class="mat-card" *ngFor="let p of product">
+    <img mat-card-image [src]="p.processImage" class="image-card">
+    <mat-card-content>
+        <h2 class="product_name">{{p.name}}</h2>
+        <p>{{p.description}}</p>
+        <mat-divider></mat-divider>
+        <div class="price_d">
+            Price: <b>${{p.price}}</b>
+            <span class="space"></span>
+            Category: <b>{{p.categoryName}}</b>
+       </div>
+    </mat-card-content>
+
+    <mat-divider></mat-divider>
+
+    <mat-card-actions align="end" class="buttons">
+        <button mat-raised-button color="primary">FAQ</button>
+        <button mat-raised-button color="accent" (click)="updateProductDetails(p.id)">Update</button>
+        <button mat-raised-button color="warn" (click)="deleteProduct(p.id,p.name)">Delete</button>
+    </mat-card-actions>
+
+</mat-card>
+</div>
+

@@ -1,0 +1,33 @@
+<mat-card class="card">
+   <mat-card-content class="card-content">
+    <form class="loginForm" [formGroup]="loginFormGroup" (ngSubmit)="onSubmit()">
+        <h2 class="login-header">Login</h2>
+        <mat-form-field appearance="outline"> 
+            <mat-label>Email</mat-label>
+            <input type="email" matInput formControlName="email">
+            <mat-error *ngIf="loginFormGroup.get('email').hasError('email')">
+               Please enter a valid email
+            </mat-error>
+            <mat-error *ngIf="loginFormGroup.get('email').hasError('required')">
+                Email is required
+             </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input [type]="hidePassword? 'password': 'text'" matInput formControlName="password">
+            <button matSuffix mat-icon-button type="button" (click)="togglePasswordVisibility()">
+                <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="loginFormGroup.get('password').hasError('required')">
+                Password is required
+             </mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit" [disabled]="isLoginFormValid()">
+            Login
+        </button>
+        <button mat-button color="accent" type="button" (click)="onClickSignUpBtn()">
+            Don't have an account? Sign up
+        </button>
+    </form>
+   </mat-card-content>
+</mat-card>

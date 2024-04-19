@@ -1,0 +1,36 @@
+<div>
+<mat-card class="container">
+    <table mat-table [dataSource]="datasource" class="mat-elevation-z8">
+        
+       <ng-container matColumnDef="No">
+        <th mat-header-cell *matHeaderCellDef>No.</th>
+        <td mat-row *matCellDef="let element">{{element.id}}</td>
+       </ng-container>
+
+       <ng-container matColumnDef="Name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-row *matCellDef="let element">{{element.name}}</td>
+       </ng-container>
+
+       <ng-container matColumnDef="Discount %">
+        <th mat-header-cell *matHeaderCellDef>Discount %</th>
+        <td mat-row *matCellDef="let element">{{element.discount}}</td>
+       </ng-container>
+
+       <ng-container matColumnDef="Coupon code">
+        <th mat-header-cell *matHeaderCellDef>Coupon code</th>
+        <td mat-row *matCellDef="let element">{{element.code}}</td>
+       </ng-container>
+
+       <ng-container matColumnDef="Action">
+        <th mat-header-cell *matHeaderCellDef>Action</th>
+        <td mat-row *matCellDef="let element">
+        <button mat-raised-button color="warn" (click)="deleteCoupon(element.id)">Delete</button>
+        </td>
+       </ng-container>
+       
+       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</mat-card>
+</div>

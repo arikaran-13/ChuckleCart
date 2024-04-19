@@ -1,0 +1,28 @@
+<div class="dialog-container">
+    <mat-card>
+        <mat-dialog-content>
+
+        <form class="container" [formGroup]="orderForm">
+            <h2>Place Order</h2>
+            <mat-form-field appearance="outline">
+                <mat-label>Address</mat-label>
+                <input type="text" matInput formControlName="address">
+                <mat-error *ngIf="orderForm.get('address').hasError('required')">
+                   Address is required
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Order Description</mat-label>
+                <input type="text" matInput formControlName="orderDescription">
+            </mat-form-field>
+            <mat-dialog-actions align="end">
+                <div class="">
+                    <button type="submit" mat-raised-button color="primary" [disabled]="!orderForm.valid"
+                    (click)="placeOrder()">Order</button>
+                    <button mat-raised-button class="close" (click)="closeForm()">Close</button>
+                </div>
+            </mat-dialog-actions>
+        </form>
+        </mat-dialog-content>
+    </mat-card>
+</div>

@@ -1,0 +1,39 @@
+<div class="container">
+    <mat-card class="matcard">
+            <form class="card-content" [formGroup]="postCouponForm" (ngSubmit)="createCoupon()">
+            <h2>Add Coupon</h2>
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput type="text" placeholder="Name" formControlName="name">
+                <mat-error *ngIf="postCouponForm.get('name').hasError('required')">
+                    Name is required
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Code</mat-label>
+                <input matInput type="text" placeholder="Coupon Code" formControlName="code">
+                <mat-error *ngIf="postCouponForm.get('code').hasError('required')">
+                    Coupon code is required
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Discount %</mat-label>
+                <input matInput type="number" placeholder="Discount" formControlName="discount">
+                <mat-error *ngIf="postCouponForm.get('discount').hasError('required')">
+                    Discount is required
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Expiration Date</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="date">
+                <mat-hint>DD/MM/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-error *ngIf="postCouponForm.get('date').hasError('required')">
+                    Expiration date is required
+                </mat-error>
+            </mat-form-field>
+            <button mat-raised-button color="primary" [disabled]="!postCouponForm.valid">Create</button>
+        </form>
+    </mat-card>
+</div>

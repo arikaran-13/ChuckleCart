@@ -1,0 +1,48 @@
+
+<div class="container" *ngIf="cartItemDetails.length>0">
+    <mat-card class="cart-card" *ngFor="let cart of cartItemDetails">
+      <mat-card-content>
+        <div class="content">
+          <div class="product-info">
+            <img [src]="cart.processedImg" alt="Product Image" class="product-image">
+            <span class="product-name">{{cart.productName}}</span>
+          </div>
+          <div class="quantity-controls">
+            <button mat-icon-button class="round-button small-button" (click)="addQuantityByOne(cart.productId,cart.quantity)">
+              <mat-icon>add</mat-icon>
+            </button>
+            <span class="quantity">{{cart.quantity}}</span>
+            <button mat-icon-button class="round-button small-button" (click)="removeQuantityByOne(cart.productId,cart.quantity)">
+              <mat-icon>remove</mat-icon>
+            </button>
+          </div>
+        </div>
+        <mat-divider></mat-divider>
+      </mat-card-content>
+      <div class="applyCoupon">
+        <form [formGroup]="couponFrom">
+          <mat-form-field appearance="outline">
+              <mat-label>Coupons</mat-label>
+              <mat-select  formControlName="code">
+                  <mat-option *ngFor="let c of coupons" (selectionChange)="applyCoupon()" [value]="c.code" >
+                    {{c.code}}
+                  </mat-option>
+              </mat-select>
+          </mat-form-field>
+        </form>
+      </div>
+      <mat-card-actions align="end" class="amt">
+        <div class="total-amount">
+          Amount: ${{order.totalAmount}}
+        </div>
+        
+        <div class="total-amount">
+          Total Amount: ${{order.amount}}
+        </div>
+      </mat-card-actions>
+      
+      <button mat-raised-button color="primary" (click)="placeOrder()">Place Order</button>
+    </mat-card>
+    
+  </div>
+  

@@ -1,0 +1,31 @@
+.card-content{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    
+}
+
+.matcard{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    
+}
+
+.container{
+    // background-color: aqua;
+    width: 100vh;
+    margin : auto auto;
+    margin-top: 120px;
+    padding: 20px;
+}
+
+h2{
+    margin: auto auto;
+    padding: 10px;
+}
+
+button{
+padding: 20px;
+margin-top: 10px;
+}

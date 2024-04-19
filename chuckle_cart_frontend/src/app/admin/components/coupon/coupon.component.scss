@@ -1,0 +1,29 @@
+.mat-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.mat-table th,
+.mat-table td {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    padding: 8px;
+}
+
+.mat-table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+.mat-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table{
+    padding: 20px;
+}
+
+.container{
+    // width: 150vh;
+    margin: auto auto;
+    // margin-top: 50px;
+}
