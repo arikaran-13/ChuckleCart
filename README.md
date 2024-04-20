@@ -1,6 +1,10 @@
 
 # ChuckleCart
 
+<p align=center>
+  <img src="https://github.com/arikaran-13/ChuckleCart/blob/main/logo.png" height="400" width="500"/>
+</p>
+
 ChuckleCart is your ultimate destination for a delightful online shopping experience. Seamlessly blending user-friendly interfaces with an extensive product range, ChuckleCart brings joy to both buyers and sellers.
 
 
@@ -53,7 +57,10 @@ ChuckleCart is an open-source project and a prototype. We welcome contributions 
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+<img src="https://github.com/arikaran-13/ChuckleCart/blob/main/1.png"/>
+<img src="https://github.com/arikaran-13/ChuckleCart/blob/main/2.png"/>
+<img src="https://github.com/arikaran-13/ChuckleCart/blob/main/3.png"/>
+
 
 
 ## Demo
