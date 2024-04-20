@@ -58,8 +58,12 @@ ChuckleCart is an open-source project and a prototype. We welcome contributions 
 ## Screenshots
 
 <img src="https://github.com/arikaran-13/ChuckleCart/blob/main/1.png"/>
+<img src="https://github.com/arikaran-13/ChuckleCart/blob/main/6.png"/>
+<img src="https://github.com/arikaran-13/ChuckleCart/blob/main/4.png"/>
 <img src="https://github.com/arikaran-13/ChuckleCart/blob/main/2.png"/>
 <img src="https://github.com/arikaran-13/ChuckleCart/blob/main/3.png"/>
+<img src="https://github.com/arikaran-13/ChuckleCart/blob/main/5.png"/>
+
 
 
 
