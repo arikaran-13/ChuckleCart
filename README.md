@@ -69,5 +69,8 @@ ChuckleCart is an open-source project and a prototype. We welcome contributions 
 
 ## Demo
 
-Insert gif or link to demo
+
+https://github.com/arikaran-13/ChuckleCart/assets/91272168/11ec6ac5-5bcd-4318-bae0-3e2952bf8a69
+
+
 
